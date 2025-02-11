@@ -1,0 +1,3 @@
+export const FETCH_MOVIES = "FETCH_MOVIES";
+export const ERROR_FETCH_MOVIES = "ERROR_FETCH_MOVIES";
+export const SET_LOADER = "SET_LOADER";
