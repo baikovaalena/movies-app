@@ -6,10 +6,6 @@
     padding: 20px;
 }
 
-.main__header {
-    margin-bottom: 20px;
-    font-size: 30px;
-}
 
 .main__input-container {
     display: flex;
@@ -44,4 +40,10 @@
 
 .main__search-button:hover {
     background-color: #0cb4dd;
+}
+
+.main__body{
+    display: flex;
+    margin: 0 20px 0 30px;
+    width: 100%;
 }

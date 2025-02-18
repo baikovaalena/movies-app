@@ -1,33 +1,20 @@
-import React, { useEffect } from "react";
 import Header from "../../components/Header/Header";
 import "./MainPage.css";
-import { useDispatch, useSelector } from "react-redux";
-import { getMoviesListThunk } from "../../redux/Movies/moviesActions";
 import MoviesList from "./MoviesList/MoviesList";
+import { useSelector } from "react-redux";
+import FiltersMovies from "./FiltersMovies/FiltersMovies";
 
 const MainPage = () => {
-  const dispatch = useDispatch();
-  const dataMovies = useSelector((state) => state.movies.movie);
+  const movies = useSelector((state) => state.movies.movies);
 
   return (
     <>
       <Header />
       <main className="main">
-        <h1 className="main__header">Найди свой любимый фильм</h1>
-        <div className="main__input-container">
-          <input
-            type="text"
-            placeholder="Искать фильмы..."
-            className="main__search-input"
-          />
-          <button
-            className="main__search-button"
-            onClick={() => dispatch(getMoviesListThunk())}
-          >
-            Найти
-          </button>
+        <div className="main__body">
+          <FiltersMovies />
+          {movies && <MoviesList dataMovies={movies} />}
         </div>
-        {dataMovies && <MoviesList dataMovies={dataMovies} />}
       </main>
     </>
   );

@@ -31,7 +31,13 @@ const MoviesList = (dataMovies) => {
           const grade = Math.round(movie.vote_average * 10) / 10;
           const color = getGrade(grade);
           return (
-            <div key={movie.id} className="movies__movie">
+            <div
+              key={movie.id}
+              className="movies__movie"
+              style={{
+                backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+              }}
+            >
               <p className="movies__movie-title">{movie.original_title}</p>
               <div className="movies__movie-details-grade">
                 <div className="movies__movie-details">
@@ -50,11 +56,11 @@ const MoviesList = (dataMovies) => {
                 </div>
               </div>
 
-              <img
-                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                alt="image poster movie"
-                className="movies__movie__poster"
-              />
+              {/*<img*/}
+              {/*  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}*/}
+              {/*  alt="image poster movie"*/}
+              {/*  className="movies__movie__poster"*/}
+              {/*/>*/}
             </div>
           );
         })}

@@ -1,18 +1,23 @@
 .movies {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    gap: 25px;
+    justify-content: end;
     padding: 20px;
+    margin-right: 60px;
+    width: 100%;
 }
 
 .movies__movie {
-    background: #1c1c1c;
     color: #fff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30%;
+    height: 420px;
+    background-size: cover;
+    background-position: top center;
 }
 
 .movies__movie:hover {
@@ -31,12 +36,10 @@
 }
 
 
-.movies__movie__poster {
-    width: 400px;
-    height: 350px;
-    object-fit: contain;
-    display: block;
-}
+/*.movies__movie__poster {*/
+/*    object-fit: contain;*/
+/*    display: block;*/
+/*}*/
 
 .grade{
     display: flex;

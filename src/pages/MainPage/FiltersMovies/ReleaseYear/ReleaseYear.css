@@ -1,0 +1,50 @@
+.release-year {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.release-year p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.release-year label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.release-year input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.release-year input[type="date"]:hover {
+    border-color: #45a049;
+}
+
+.release-year input[type="date"]:focus {
+    border-color: #388e3c;
+    box-shadow: 0 0 5px rgba(72, 175, 80, 0.5);
+}
+
+.release-year input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(30%);
+    cursor: pointer;
+}
