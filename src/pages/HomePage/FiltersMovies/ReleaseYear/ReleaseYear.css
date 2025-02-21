@@ -5,7 +5,7 @@
     background: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
     max-width: 300px;
 }
 
@@ -41,7 +41,7 @@
 
 .release-year input[type="date"]:focus {
     border-color: #388e3c;
-    box-shadow: 0 0 5px rgba(72, 175, 80, 0.5);
+    box-shadow: 0 0 5px rgb(72 175 80 / 50%);
 }
 
 .release-year input[type="date"]::-webkit-calendar-picker-indicator {

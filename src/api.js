@@ -10,7 +10,7 @@ const instance = axios.create({
 export async function getMoviesList(selectedGenres, endDate, startDate) {
   const selectedGenresToString = selectedGenres.join(",");
 
-  const response = await instance.get("discover/movie", {
+  const response = await instance.get("discover/moie", {
     params: {
       with_genres: selectedGenresToString,
       "primary_release_date.gte": startDate,

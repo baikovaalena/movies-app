@@ -3,9 +3,9 @@ import {
   FETCH_MOVIES,
   SET_GENRES,
   SET_LOADER,
-  SELECT_GENRES,
-  RELEASE_YEAR_TO,
-  RELEASE_YEAR_FROM,
+  SELECT_GENRE,
+  SET_RELEASE_YEAR_TO,
+  SET_RELEASE_YEAR_FROM,
 } from "./moviesTypes";
 
 const initialState = {
@@ -37,17 +37,19 @@ export const moviesReducer = (state = initialState, action) => {
         ...state,
         genres: action.payload,
       };
-    case SELECT_GENRES:
+    case SELECT_GENRE:
       return {
         ...state,
-        selectedGenres: action.payload,
+        selectedGenres: state.selectedGenres.includes(action.payload)
+          ? state.selectedGenres.filter((genre) => genre !== action.payload)
+          : [...state.selectedGenres, action.payload],
       };
-    case RELEASE_YEAR_TO:
+    case SET_RELEASE_YEAR_TO:
       return {
         ...state,
         endDate: action.payload,
       };
-    case RELEASE_YEAR_FROM:
+    case SET_RELEASE_YEAR_FROM:
       return {
         ...state,
         startDate: action.payload,

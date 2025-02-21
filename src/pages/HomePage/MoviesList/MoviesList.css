@@ -12,9 +12,9 @@
     color: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 30%;
+    width: 250px;
     height: 420px;
     background-size: cover;
     background-position: top center;
@@ -22,7 +22,7 @@
 
 .movies__movie:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 30%);
 }
 
 .movies__movie-title {
@@ -31,15 +31,18 @@
     color: #fff;
     text-align: center;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgb(0 0 0 / 60%);
     border-radius: 8px;
 }
 
 
-/*.movies__movie__poster {*/
-/*    object-fit: contain;*/
-/*    display: block;*/
-/*}*/
+/* .movies__movie__poster { */
+
+/*    object-fit: contain; */
+
+/*    display: block; */
+
+/* } */
 
 .grade{
     display: flex;
@@ -63,7 +66,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
-    color: rgb(204, 204, 202);
+    color: rgb(204 204 202);
 }
 
 .movies__movie-details{
@@ -75,4 +78,15 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.movies__error-nothing-found{
+    display: flex;
+    align-self: center;
+    font-size: 20px;
+}
+
+.movies__error{
+    display: flex;
+    justify-content: start;
 }

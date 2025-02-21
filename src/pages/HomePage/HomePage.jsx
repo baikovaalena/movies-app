@@ -1,23 +1,20 @@
 import Header from "../../components/Header/Header";
-import "./MainPage.css";
+import "./HomePage.css";
 import MoviesList from "./MoviesList/MoviesList";
-import { useSelector } from "react-redux";
 import FiltersMovies from "./FiltersMovies/FiltersMovies";
 
-const MainPage = () => {
-  const movies = useSelector((state) => state.movies.movies);
-
+const HomePage = () => {
   return (
     <>
       <Header />
       <main className="main">
         <div className="main__body">
           <FiltersMovies />
-          {movies && <MoviesList dataMovies={movies} />}
+          <MoviesList />
         </div>
       </main>
     </>
   );
 };
 
-export default MainPage;
+export default HomePage;

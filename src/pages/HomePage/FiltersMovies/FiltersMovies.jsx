@@ -1,7 +1,7 @@
 import "./FiltersMovies.css";
 import Genres from "./Genres/Genres";
 import ReleaseYear from "./ReleaseYear/ReleaseYear";
-import SearchMovies from "../SearchMovies/SearchMovies";
+import SearchMovies from "./SearchMovies/SearchMovies";
 
 const FiltersMovies = () => {
   return (

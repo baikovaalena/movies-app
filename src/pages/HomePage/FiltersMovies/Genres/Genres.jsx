@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import "./Genres.css";
-import {
-  chooseGenresList,
-  getGenresListThunk,
-} from "../../../../redux/Movies/moviesActions";
+import { chooseGenresList } from "../../../../redux/Movies/moviesActions";
 import { useDispatch, useSelector } from "react-redux";
+import { getGenresListThunk } from "../../../../redux/Movies/moviesThunks";
 
 const Genres = () => {
   const dispatch = useDispatch();
