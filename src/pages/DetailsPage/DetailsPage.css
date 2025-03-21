@@ -1,0 +1,146 @@
+.movie-details__background {
+  position: relative;
+  background-size: cover;
+  background-position: top center;
+  padding: 30px;
+  z-index: 0;
+}
+
+.movie-details__background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: top center;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+
+.movie-details {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  z-index: 1;
+}
+
+
+.movie-details__poster {
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.movie-details__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-info__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-info__title h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: #f8f8f8;
+}
+
+.movie-details__release-genres-runtime {
+  display: flex;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 0.8;
+  background-color: rgba(30, 31, 34, 0.73);
+  border-radius: 15px;
+  padding: 8px;
+  align-self: baseline;
+  color: #ffffff;
+}
+
+.movie-details__release-info {
+  margin-top: 20px;
+}
+
+.tagline {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  padding: 8px;
+  background-color: rgba(30, 31, 34, 0.73);
+  border-radius: 15px;
+  align-self: baseline;
+  color: #ffffff;
+}
+
+.movie-details__reviews {
+  margin-top: 30px;
+}
+
+.overview {
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  opacity: 0.9;
+  padding: 8px;
+  background-color: rgba(30, 31, 34, 0.73);
+  border-radius: 15px;
+  align-self: baseline;
+  color: #ffffff;
+}
+
+.movie-meta {
+  margin-top: 20px;
+}
+
+.movie-meta p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.movie-details__genres {
+  display: flex;
+  gap: 10px;
+}
+
+.movies__status-сontainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+}
+
+.details-page__status{
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.movie-details__production-companies-header{
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8f8f8;
+}
+
+.movie-details__production-companies{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
+  background-color: rgba(30, 31, 34, 0.73);
+  border-radius: 15px;
+  padding: 8px;
+  gap: 10px;
+  color: #f8f8f8;
+}

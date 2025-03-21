@@ -1,9 +1,0 @@
-export const FETCH_MOVIES = "FETCH_MOVIES";
-export const ERROR_FETCH_MOVIES = "ERROR_FETCH_MOVIES";
-
-export const SET_LOADER = "SET_LOADER";
-export const SET_GENRES = "SET_GENRES";
-
-export const SELECT_GENRE = "SELECT_GENRES";
-export const SET_RELEASE_YEAR_TO = "SET_RELEASE_YEAR_TO";
-export const SET_RELEASE_YEAR_FROM = "RELEASE_YEAR_FROM";

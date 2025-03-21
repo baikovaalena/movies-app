@@ -1,0 +1,23 @@
+.filters__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.filters__search-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #7ac8aa;
+    color: white;
+    border: 2px solid #86caa4;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters__search-btn:hover {
+    background-color: #0cb4dd;
+}

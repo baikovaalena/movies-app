@@ -1,33 +1,33 @@
-.release-year {
+.date-filter__container {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #f8f9fa;
+    background: #acccf6;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-    max-width: 300px;
+    align-self: center;
+    width: 300px;
 }
 
-.release-year p {
+.date-filter__container p {
     font-size: 18px;
-    font-weight: bold;
     color: #333;
     margin-bottom: 5px;
 }
 
-.release-year label {
+.date-filter__container label {
     font-size: 14px;
     font-weight: 500;
     color: #555;
     margin-bottom: 3px;
 }
 
-.release-year input[type="date"] {
+.date-filter__container input[type="date"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #4c91af;
     border-radius: 5px;
     background: #fff;
     color: #333;
@@ -35,16 +35,16 @@
     transition: all 0.3s ease;
 }
 
-.release-year input[type="date"]:hover {
-    border-color: #45a049;
+.date-filter__container input[type="date"]:hover {
+    border-color: #132378;
 }
 
-.release-year input[type="date"]:focus {
-    border-color: #388e3c;
-    box-shadow: 0 0 5px rgb(72 175 80 / 50%);
+.date-filter__container input[type="date"]:focus {
+    border-color: #00258c;
+    box-shadow: 0 0 5px rgba(92, 201, 237, 0.5);
 }
 
-.release-year input[type="date"]::-webkit-calendar-picker-indicator {
+.date-filter__container input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(30%);
     cursor: pointer;
 }

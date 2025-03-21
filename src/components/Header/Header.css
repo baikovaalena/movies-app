@@ -1,12 +1,11 @@
 .header {
   background-color: rgb(24 36 87);
-  padding: 5px 0;
 }
 
 .header__logo {
-  width: 90px;
-  height: 90px;
-  padding: 5px;
+  width: 100px;
+  height: 100px;
+  padding: 5px 5px 5px 10px;
 }
 
 .header__ul {
@@ -38,8 +37,7 @@
   display: inline-block;
   width: 130px;
   padding: 5px 12px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 25px;
   text-align: center;
   text-decoration: none;
   color: #3fbdc5;
@@ -50,6 +48,5 @@
 
 .header__link:hover {
   transform: scale(1.1);
-  background-color: rgb(255 255 255 / 10%);
   text-shadow: 0 0 5px rgb(255 255 255 / 60%);
 }

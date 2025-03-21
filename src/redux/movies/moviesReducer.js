@@ -4,18 +4,20 @@ import {
   SET_GENRES,
   SET_LOADER,
   SELECT_GENRE,
-  SET_RELEASE_YEAR_TO,
-  SET_RELEASE_YEAR_FROM,
+  SET_RELEASE_YEAR_START,
+  SET_RELEASE_YEAR_END,
+  SORT_BY_PARAMETERS,
 } from "./moviesTypes";
 
 const initialState = {
   movies: [],
-  error: "",
-  loading: false,
   genres: [],
   selectedGenres: [],
-  startDate: "",
+  error: "",
   endDate: "",
+  startDate: "",
+  sortBy: "",
+  loading: false,
 };
 
 export const moviesReducer = (state = initialState, action) => {
@@ -44,15 +46,20 @@ export const moviesReducer = (state = initialState, action) => {
           ? state.selectedGenres.filter((genre) => genre !== action.payload)
           : [...state.selectedGenres, action.payload],
       };
-    case SET_RELEASE_YEAR_TO:
+    case SET_RELEASE_YEAR_START:
       return {
         ...state,
         endDate: action.payload,
       };
-    case SET_RELEASE_YEAR_FROM:
+    case SET_RELEASE_YEAR_END:
       return {
         ...state,
         startDate: action.payload,
+      };
+    case SORT_BY_PARAMETERS:
+      return {
+        ...state,
+        sortBy: action.payload,
       };
     default:
       return state;

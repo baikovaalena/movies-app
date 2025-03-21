@@ -14,11 +14,15 @@ export const getMoviesListThunk = () => {
     });
 
     try {
-      const { selectedGenres, startDate, endDate } = getState().movies;
-
+      const { selectedGenres, startDate, endDate, sortBy } = getState().movies;
       dispatch({ type: SET_LOADER, payload: true });
 
-      const data = await getMoviesList(selectedGenres, startDate, endDate);
+      const data = await getMoviesList(
+        selectedGenres,
+        startDate,
+        endDate,
+        sortBy,
+      );
 
       dispatch({ type: FETCH_MOVIES, payload: data });
     } catch (error) {

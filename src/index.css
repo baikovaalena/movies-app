@@ -1,4 +1,8 @@
 /* Reset and base styles  */
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -39,6 +43,8 @@ ul, ul li {
 img {
   vertical-align: top;
 }
+
+
 
 img, svg {
   max-width: 100%;

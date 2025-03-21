@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./Genres.css";
-import { chooseGenresList } from "../../../../redux/Movies/moviesActions";
+import { chooseGenresList } from "../../../../redux/movies/moviesActions";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenresListThunk } from "../../../../redux/Movies/moviesThunks";
+import { getGenresListThunk } from "../../../../redux/movies/moviesThunks";
 
 const Genres = () => {
   const dispatch = useDispatch();
@@ -15,13 +15,13 @@ const Genres = () => {
 
   return (
     <>
-      <h1 className="genres-header">Жанры</h1>
-      <div className="genres">
+      <p className="genres__header">Genres</p>
+      <div className="genres__container">
         {genres.map((genre) => {
           const isSelected = selectedGenres.includes(genre.id);
           return (
             <button
-              className={`genres-button ${isSelected ? "active" : ""}`}
+              className={`genres__btn ${isSelected ? "active" : ""}`}
               key={genre.id}
               onClick={() => dispatch(chooseGenresList(genre.id))}
             >

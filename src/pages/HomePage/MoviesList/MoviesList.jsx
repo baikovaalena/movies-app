@@ -1,15 +1,22 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./MoviesList.css";
 import { NavLink } from "react-router-dom";
-import { getGrade } from "../../../utilits";
-import Loader from "../../../components/Loading/Loader";
+import { getColor } from "../../../utils/getColor";
+import Loader from "../../../components/Loader/Loader";
+import { getGrades } from "../../../utils/getGrade";
+import { useEffect } from "react";
+import { getMoviesListThunk } from "../../../redux/movies/moviesThunks";
 
 const MoviesList = () => {
+  const dispatch = useDispatch();
   const error = useSelector((state) => state.movies.error);
   const loading = useSelector((state) => state.movies.loading);
   const movies = useSelector((state) => state.movies.movies);
   const resultsMovies = movies.results;
+
+  useEffect(() => {
+    dispatch(getMoviesListThunk());
+  }, []);
 
   return (
     <ul className="movies">
@@ -17,16 +24,18 @@ const MoviesList = () => {
       {error && (
         <div className="movies__error">
           <p className="movies__error-nothing-found">
-            Возникла ошибка: {error}
+            An error occurred: {error}
           </p>
         </div>
       )}
+
       {resultsMovies &&
         resultsMovies.map((movie) => {
-          const grade = Math.round(movie.vote_average * 10) / 10;
-          const color = getGrade(grade);
+          const grade = getGrades(movie.vote_average);
+          const color = getColor(grade);
+
           return (
-            <NavLink to={`/movie-${movie.id}`} key={movie.id}>
+            <NavLink to={`/movie/${movie.id}`} key={movie.id}>
               <div
                 className="movies__movie"
                 style={{

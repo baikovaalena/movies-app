@@ -1,8 +1,5 @@
-.main {
+.home {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 20px;
 }
 
@@ -26,21 +23,6 @@
     border-color: #007bff;
 }
 
-.main__search-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #7ac8aa;
-    color: white;
-    border: 2px solid #86caa4;
-    border-left: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.main__search-button:hover {
-    background-color: #0cb4dd;
-}
 
 .main__body{
     display: flex;

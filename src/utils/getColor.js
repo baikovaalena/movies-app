@@ -1,4 +1,4 @@
-export const getGrade = (grade) => {
+export const getColor = (grade) => {
   if (grade >= 8.5) {
     return "#007BFF";
   } else if (grade >= 7.0) {

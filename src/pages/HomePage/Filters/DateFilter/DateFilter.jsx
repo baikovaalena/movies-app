@@ -1,20 +1,19 @@
 import React from "react";
-import "./ReleaseYear.css";
+import "./DateYear.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  releaseDateStart,
   releaseDateEnd,
-} from "../../../../redux/Movies/moviesActions";
+  releaseDateStart,
+} from "../../../../redux/movies/moviesActions";
 
-const ReleaseYear = () => {
+const DateFilter = () => {
   const dispatch = useDispatch();
   const endDate = useSelector((state) => state.movies.endDate);
   const startDate = useSelector((state) => state.movies.startDate);
 
   return (
-    <div className="release-year">
-      <p>Даты выхода:</p>
-      <label htmlFor="start">Начало:</label>
+    <div className="date-filter__container">
+      <label htmlFor="start">Start:</label>
       <input
         type="date"
         id="start"
@@ -25,7 +24,7 @@ const ReleaseYear = () => {
         onChange={(e) => dispatch(releaseDateStart(e.target.value))}
       />
 
-      <label htmlFor="end">Конец:</label>
+      <label htmlFor="end">End:</label>
       <input
         type="date"
         id="end"
@@ -39,4 +38,4 @@ const ReleaseYear = () => {
   );
 };
 
-export default ReleaseYear;
+export default DateFilter;

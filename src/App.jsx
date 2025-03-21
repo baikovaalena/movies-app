@@ -1,16 +1,37 @@
 import HomePage from "./pages/HomePage/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
+import Header from "./components/Header/Header";
+import PageMorePeople from "./pages/СastCrew/PageMorePeople/PageMorePeople";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: (
+      <>
+        <Header />
+        <HomePage />,
+      </>
+    ),
   },
-  // {
-  //   path: `/movie-${id}`,
-  //   element: <DetailsPage />,
-  // },
+  {
+    path: `/movie/:id`,
+    element: (
+      <>
+        <Header />
+        <DetailsPage />
+      </>
+    ),
+  },
+  {
+    path: `/movie/:id/credits`,
+    element: (
+      <>
+        <Header />
+        <PageMorePeople />
+      </>
+    ),
+  },
 ]);
 
 function App() {
