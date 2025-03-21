@@ -18,7 +18,7 @@ const Filters = () => {
         className="filters__search-btn"
         onClick={() => dispatch(getMoviesListThunk())}
       >
-        Search movie
+        Search
       </button>
     </div>
   );
