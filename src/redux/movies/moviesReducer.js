@@ -7,16 +7,24 @@ import {
   SET_RELEASE_YEAR_START,
   SET_RELEASE_YEAR_END,
   SORT_BY_PARAMETERS,
+  MOVIES_SET_PAGINATION,
+  MOVIES_INIT,
 } from "./moviesTypes";
 
 const initialState = {
   movies: [],
+  pagination: {
+    page: 1,
+    totalPage: 0,
+    totalResults: 0,
+  },
   genres: [],
   selectedGenres: [],
   error: "",
   endDate: "",
   startDate: "",
   sortBy: "",
+  init: false,
   loading: false,
 };
 
@@ -49,17 +57,30 @@ export const moviesReducer = (state = initialState, action) => {
     case SET_RELEASE_YEAR_START:
       return {
         ...state,
-        endDate: action.payload,
+        startDate: action.payload,
       };
     case SET_RELEASE_YEAR_END:
       return {
         ...state,
-        startDate: action.payload,
+        endDate: action.payload,
       };
     case SORT_BY_PARAMETERS:
       return {
         ...state,
         sortBy: action.payload,
+      };
+    case MOVIES_SET_PAGINATION:
+      return {
+        ...state,
+        pagination: {
+          ...state.pagination,
+          ...action.payload,
+        },
+      };
+    case MOVIES_INIT:
+      return {
+        ...state,
+        init: action.payload,
       };
     default:
       return state;

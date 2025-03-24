@@ -1,12 +1,14 @@
 import {
   ERROR_FETCH_MOVIES,
   FETCH_MOVIES,
+  MOVIES_INIT,
+  MOVIES_SET_PAGINATION,
   SET_GENRES,
   SET_LOADER,
 } from "./moviesTypes";
 import { getGenres, getMoviesList } from "../../api";
 
-export const getMoviesListThunk = () => {
+export const getMoviesListThunk = (page) => {
   return async (dispatch, getState) => {
     dispatch({
       type: ERROR_FETCH_MOVIES,
@@ -15,6 +17,7 @@ export const getMoviesListThunk = () => {
 
     try {
       const { selectedGenres, startDate, endDate, sortBy } = getState().movies;
+
       dispatch({ type: SET_LOADER, payload: true });
 
       const data = await getMoviesList(
@@ -22,9 +25,20 @@ export const getMoviesListThunk = () => {
         startDate,
         endDate,
         sortBy,
+        page,
       );
 
-      dispatch({ type: FETCH_MOVIES, payload: data });
+      dispatch({ type: FETCH_MOVIES, payload: data.results });
+      dispatch({ type: MOVIES_INIT, payload: true });
+
+      dispatch({
+        type: MOVIES_SET_PAGINATION,
+        payload: {
+          page: data.page,
+          totalPage: data.total_pages,
+          totalResults: data.total_results,
+        },
+      });
     } catch (error) {
       dispatch({
         type: ERROR_FETCH_MOVIES,

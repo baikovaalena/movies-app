@@ -1,15 +1,10 @@
 import React from "react";
-import Loader from "../../../components/Loader/Loader";
 import { useSelector } from "react-redux";
 import { getColor } from "../../../utils/getColor";
 import { getGrades } from "../../../utils/getGrade";
 
 const Details = () => {
   const detailsMovie = useSelector((state) => state.details.movieDetails);
-
-  const error = useSelector((state) => state.details.detailsError);
-  const loading = useSelector((state) => state.details.detailsLoading);
-
   const { genres } = detailsMovie;
 
   const grade = getGrades(detailsMovie.vote_average);
@@ -17,13 +12,7 @@ const Details = () => {
 
   return (
     <>
-      {loading && error && (
-        <div className="movies__status-сontainer">
-          {loading && <Loader />}
-          {error && <p>{error}</p>}
-        </div>
-      )}
-      {!loading && detailsMovie && (
+      {detailsMovie && (
         <div
           className="movie-details__background"
           style={{
@@ -37,10 +26,10 @@ const Details = () => {
               alt={detailsMovie.title}
             />
             <div className="movie-details__info">
-              <div className="movie-info__title">
+              <div className="movie-details__score">
                 <h1>{detailsMovie.title}</h1>
                 <p
-                  className="grade"
+                  className="movies__details-grade"
                   style={{
                     border: color ? `2px solid ${color}` : "2px solid gray",
                   }}
@@ -56,7 +45,7 @@ const Details = () => {
                       detailsMovie.original_language.toUpperCase()}
                   </p>
                   <ul className="movie-details__genres">
-                    {genres &&
+                    {genres?.length > 1 &&
                       genres.map((genre) => {
                         return <li key={genre.id}>{genre.name}</li>;
                       })}

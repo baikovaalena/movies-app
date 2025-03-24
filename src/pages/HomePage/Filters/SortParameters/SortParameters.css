@@ -50,3 +50,56 @@
   transform: scale(1.2);
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .sort-options {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .sort-options__header {
+    font-size: 18px;
+  }
+
+  .sort-options__vote-label,
+  .sort-options__popularity-label {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .sort-options__vote-input,
+  .sort-options__popularity-input {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .sort-options {
+    padding: 10px;
+  }
+
+  .sort-options__header {
+    font-size: 16px;
+  }
+
+  .sort-options__vote,
+  .sort-options__popularity {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .sort-options__vote-label,
+  .sort-options__popularity-label {
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .sort-options__vote-input,
+  .sort-options__popularity-input {
+    transform: scale(0.9);
+  }
+}
+

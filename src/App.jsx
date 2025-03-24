@@ -2,7 +2,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DetailsPage from "./pages/DetailsPage/DetailsPage";
 import Header from "./components/Header/Header";
-import PageMorePeople from "./pages/СastCrew/PageMorePeople/PageMorePeople";
+import MoreCastPage from "./pages/СastPage/MoreCastPage/MoreCastPage";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-        <PageMorePeople />
+        <MoreCastPage />
       </>
     ),
   },

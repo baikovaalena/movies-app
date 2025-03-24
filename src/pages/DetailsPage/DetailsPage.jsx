@@ -4,12 +4,11 @@ import { getDetailsMovie } from "../../redux/detailsMovie/detailsMoviesThunks";
 import { useParams } from "react-router-dom";
 import "./DetailsPage.css";
 import Details from "./Details/Details";
-import CastCrew from "../СastCrew/CastCrew";
+import CastPage from "../СastPage/CastPage";
 import Loader from "../../components/Loader/Loader";
 
 const DetailsPage = () => {
   const { id } = useParams();
-  const detailsMovie = useSelector((state) => state.details.movieDetails);
   const loader = useSelector((state) => state.details.loading);
   const error = useSelector((state) => state.details.error);
   const dispatch = useDispatch();
@@ -18,21 +17,25 @@ const DetailsPage = () => {
     dispatch(getDetailsMovie(id));
   }, [id]);
 
+  if (loader) {
+    return (
+      <div className="details-page__status">
+        <Loader />
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="details-page__status">
+        <p>{error}</p>
+      </div>
+    );
+  }
+
   return (
     <>
-      {!detailsMovie && (
-        <div className="details-page__status">
-          {loader && <Loader />}
-          {error && <p>{error}</p>}
-        </div>
-      )}
-
-      {!loader && !error && detailsMovie && (
-        <>
-          <Details />
-          <CastCrew />
-        </>
-      )}
+      <Details />
+      <CastPage />
     </>
   );
 };

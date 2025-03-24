@@ -1,0 +1,68 @@
+
+.cast__container,
+.crew__container {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cast__title,
+.crew__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.cast__list,
+.crew__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.cast__item, .crew__item{
+  display: flex;
+  flex-direction: column;
+}
+
+.cast__item img,
+.crew__item img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.cast__name-character,
+.crew__name-character {
+  padding: 5px;
+  color: #000;
+}
+
+.cast__name,
+.crew__name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.cast__character,
+.crew__job {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+
+  .cast__item img,
+  .crew__item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+  }
+
+}

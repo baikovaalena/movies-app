@@ -12,16 +12,18 @@ export async function getMoviesList(
   endDate,
   startDate,
   sortBy,
+  page,
 ) {
   const selectedGenresToString = selectedGenres.join(",");
 
   const response = await instance.get("discover/movie", {
     params: {
       with_genres: selectedGenresToString,
-      "primary_release_date.gte": startDate,
-      "primary_release_date.lte": endDate,
+      "primary_release_date.gte": endDate,
+      "primary_release_date.lte": startDate,
       sort_by: sortBy,
       "vote_count.gte": 200,
+      page: page,
     },
   });
 

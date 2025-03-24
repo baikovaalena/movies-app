@@ -20,14 +20,12 @@
   z-index: -1;
 }
 
-
 .movie-details {
   display: flex;
   gap: 20px;
   padding: 30px;
   z-index: 1;
 }
-
 
 .movie-details__poster {
   width: 320px;
@@ -41,13 +39,25 @@
   flex-direction: column;
 }
 
-.movie-info__title {
+.movie-details__score {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.movie-info__title h1 {
+.movies__details-grade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.movie-details__score h1 {
   font-size: 36px;
   font-weight: 700;
   margin: 0;
@@ -120,20 +130,20 @@
   padding-top: 300px;
 }
 
-.details-page__status{
+.details-page__status {
   display: flex;
   justify-content: center;
   margin-top: 150px;
 }
 
-.movie-details__production-companies-header{
+.movie-details__production-companies-header {
   margin-top: 20px;
   font-size: 20px;
   font-weight: 700;
   color: #f8f8f8;
 }
 
-.movie-details__production-companies{
+.movie-details__production-companies {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -143,4 +153,83 @@
   padding: 8px;
   gap: 10px;
   color: #f8f8f8;
+}
+
+
+@media (max-width: 768px) {
+  .movie-details {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .movie-details__poster {
+    width: 300px;
+  }
+
+  .movie-details__score h1 {
+    font-size: 28px;
+  }
+
+  .movie-details__release-genres-runtime,
+  .tagline,
+  .overview,
+  .movie-details__production-companies {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .movie-details__reviews {
+    margin-top: 25px;
+  }
+
+  .movie-meta p {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .movie-details {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .movie-details__poster {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .movie-details__score {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .movie-details__score h1 {
+    font-size: 24px;
+  }
+
+  .movie-details__release-genres-runtime,
+  .tagline,
+  .overview,
+  .movie-details__production-companies {
+    font-size: 14px;
+    padding: 6px;
+    text-align: center;
+  }
+
+  .movie-details__background {
+    padding: 20px;
+  }
+
+  .movie-details__reviews {
+    margin-top: 20px;
+  }
+
+  .movie-meta p {
+    font-size: 14px;
+  }
 }
