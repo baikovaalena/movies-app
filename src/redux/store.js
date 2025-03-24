@@ -1,4 +1,9 @@
-import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import {
+  legacy_createStore as applyMiddleware,
+  combineReducers,
+  compose,
+  createStore,
+} from "redux";
 import { thunk } from "redux-thunk";
 import { moviesReducer } from "./movies/moviesReducer";
 import { detailsMovieReducer } from "./detailsMovie/detailsMovieReducer";
