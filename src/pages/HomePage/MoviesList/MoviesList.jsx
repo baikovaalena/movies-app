@@ -39,6 +39,11 @@ const MoviesList = () => {
   return (
     <ul className="movies">
       {movies.map((movie) => {
+        const isMovieLength =
+          movie.original_title.length > 15
+            ? movie.original_title.slice(0, 15) + "..."
+            : movie.original_title;
+
         const grade = getGrades(movie.vote_average);
         const color = getColor(grade);
 
@@ -50,21 +55,13 @@ const MoviesList = () => {
                 backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
               }}
             >
-              <p className="movies__movie-title">{movie.original_title}</p>
               <div className="movies__movie-info">
-                <div className="movies__movie-details">
-                  <p>{movie.title},</p>
-                  <p>{movie.release_date.slice(0, 4)},</p>
-                  <p>{movie.original_language.toUpperCase()}</p>
-                </div>
-                <div className="movies__movie-rating">
-                  <div
-                    className="movies__movie-score"
-                    style={{ border: ` 2px solid ${color} ` }}
-                  >
-                    <p>{grade}</p>
-                  </div>
-                  <p className="movies__movie-votes">{movie.vote_count}</p>
+                <p className="movies__movie-title">{isMovieLength}</p>
+                <div
+                  className="movies__movie-container-score"
+                  style={{ border: ` 2px solid ${color} ` }}
+                >
+                  <p className="movies__movie-score">{grade}</p>
                 </div>
               </div>
             </div>

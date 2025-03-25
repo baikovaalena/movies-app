@@ -8,16 +8,6 @@ export const rootReducer = combineReducers({
   details: detailsMovieReducer,
 });
 
-// const REDUX__DEVTOOLS =
-//   (window?.__REDUX_DEVTOOLS_EXTENSION__ &&
-//     window?.__REDUX_DEVTOOLS_EXTENSION__()) ||
-//   compose();
-// export const store = createStore(
-//   rootReducer,
-//   applyMiddleware(thunk),
-//   REDUX__DEVTOOLS,
-// );
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = createStore(
   rootReducer,

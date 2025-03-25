@@ -35,6 +35,8 @@
 .genres__btn.active {
   background: linear-gradient(135deg, #4BB3FD, #1B98E0);
   box-shadow: 0 4px 10px rgb(27 152 224 / 30%);
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 @media (max-width: 768px) {

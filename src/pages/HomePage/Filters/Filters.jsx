@@ -17,23 +17,24 @@ const Filters = () => {
   return (
     <div className="filters">
       <button onClick={handleOpenBtn} className="filters__open-btn">
-        {isOpen ? "Open filters" : "Close filters"}
+        {isOpen ? "Close filters" : "Open filters"}
       </button>
 
       {isOpen && (
-        <div className="filters__container">
-          <Genres />
-          <DateFilter />
-          <SortParameters />
-        </div>
+        <>
+          <div className="filters__container">
+            <Genres />
+            <DateFilter />
+            <SortParameters />
+          </div>
+          <button
+            className="filters__search-btn"
+            onClick={() => dispatch(getMoviesListThunk())}
+          >
+            Search
+          </button>
+        </>
       )}
-
-      <button
-        className="filters__search-btn"
-        onClick={() => dispatch(getMoviesListThunk())}
-      >
-        Search
-      </button>
     </div>
   );
 };
